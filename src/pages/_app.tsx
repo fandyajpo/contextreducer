@@ -1,6 +1,11 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
-
+import type { AppProps } from "next/app";
+import GlobalProvider from "@/lib/Context";
+import "@/styles/globals.css";
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  // WRAP ITU ANU COMPONENT-NYA
+  return (
+    <GlobalProvider>
+      <Component {...pageProps} />
+    </GlobalProvider>
+  );
 }
